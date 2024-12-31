@@ -2,8 +2,7 @@ import express from "express";
 import "dotenv/config";
 
 const app = express();
-const port = process.env.PORT || 5000;
-const hostname = "127.0.0.1";
+const port = process.env.PORT || 8080;
 app.use(express.json());
 
 const teas = [];
@@ -53,6 +52,6 @@ app.delete("/teas/:id", (req, res) => {
   }
 });
 
-app.listen(port, "127.0.0.1", () => {
-  console.log(`Server listening on http://${hostname}:${port}`);
+app.listen(port, () => {
+  console.log(`Server listening on PORT=${port}`);
 });
